@@ -3,7 +3,7 @@
   "name": "com.sigpen/mcp",
   "title": "SigPen",
   "description": "Draft, fill in, and prepare documents for e-signature. You approve every send in SigPen.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "websiteUrl": "https://www.sigpen.com/ai-assistants",
   "repository": {
     "url": "https://github.com/sigpenhq/sigpen-mcp",
@@ -25,9 +25,9 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Your SigPen API key, sent as a Bearer token.",
+          "description": "Optional. A SigPen API key, sent as a Bearer token. Without it, your client signs in to SigPen.",
           "value": "Bearer {api_key}",
-          "isRequired": true,
+          "isRequired": false,
           "isSecret": true,
           "variables": {
             "api_key": {

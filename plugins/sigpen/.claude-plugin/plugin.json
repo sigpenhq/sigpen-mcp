@@ -1,7 +1,7 @@
 {
   "name": "sigpen",
   "displayName": "SigPen",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Draft, fill in, and prepare documents for e-signature with SigPen. Nothing is sent until you approve it in SigPen.",
   "author": { "name": "SigPen", "email": "support@sigpen.com", "url": "https://www.sigpen.com" },
   "homepage": "https://www.sigpen.com/ai-assistants",

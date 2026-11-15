@@ -3,12 +3,34 @@
 Connect your AI assistant to [SigPen](https://www.sigpen.com), the e-signature app. Ask it to draft an NDA, fill in an offer letter from your template, or upload a PDF and line up the signers. It prepares everything; you approve every send in SigPen.
 
 - **Server URL:** `https://www.sigpen.com/api/mcp` (Streamable HTTP)
-- **Auth:** `Authorization: Bearer <your SigPen API key>`
+- **Auth:** sign in to SigPen (Claude apps, ChatGPT, and other clients that support MCP sign-in), or `Authorization: Bearer <your SigPen API key>`
 - **Guide:** [sigpen.com/docs/mcp](https://www.sigpen.com/docs/mcp)
 
 This repository holds the setup instructions and the plugins for Claude Code and Cursor. SigPen hosts the server itself, so there's nothing to install or run.
 
-## Before you start
+## Claude apps (claude.ai, Claude Desktop, mobile)
+
+You sign in to SigPen, so there's no key to copy. It works on the free Developer tier and on Professional and up.
+
+1. In Claude, open Settings, then Customize, then Connectors.
+2. Click Add, then Add custom connector. Name it SigPen, use the URL `https://www.sigpen.com/api/mcp`, and click Continue.
+3. Under Authentication, check that **Sign in now** is selected (Claude picks it for SigPen), keep Claude's published identity as the OAuth client, and click Add.
+4. Click Connect, sign in to SigPen, and click Allow.
+
+Add it once on claude.ai or in Claude Desktop and it works in the mobile apps too. On Team and Enterprise plans, an owner may need to add the connector first.
+
+## ChatGPT
+
+Works on the free ChatGPT plan too.
+
+1. In ChatGPT, open Plugins in the sidebar, click Add, then Add custom MCP server.
+2. Name it SigPen and use the URL `https://www.sigpen.com/api/mcp`. Keep OAuth as the authentication.
+3. Tick "I understand and want to continue", click Create as a plugin, then Connect SigPen.
+4. Sign in to SigPen and click Allow.
+
+Then start a chat with `@SigPen`. In a Business or Enterprise workspace, an admin may need to allow custom MCP servers first.
+
+## Before you start (clients that use an API key)
 
 1. Create an API key at [sigpen.com/developer](https://www.sigpen.com/developer?tab=ai). It works on the free Developer tier and on Professional and up (Starter has no API). Use a **live** key (`sp_live_`) to draft; a test key can only look things up.
 2. Name the key "AI assistant" so you can revoke it on its own.
@@ -81,13 +103,13 @@ bearer_token_env_var = "SIGPEN_API_KEY"
 
 ## Other clients
 
-Any client that supports remote MCP servers over Streamable HTTP and lets you set a request header works. The Claude and ChatGPT apps need one-click sign-in, which SigPen doesn't offer yet.
+Any client that supports remote MCP servers over Streamable HTTP works: with MCP sign-in (OAuth), or with your API key in a request header.
 
 ## Tools
 
 | Tool | What it does |
 | --- | --- |
-| `get_account` | Your plan, whether the key is live or test, documents sent through the API this month, and rate limits. |
+| `get_account` | Your plan, how the assistant is connected (a live or test key, or a sign-in), documents sent through the API this month, and rate limits. |
 | `list_documents` | Your documents with status and signer counts. Filter by status, title, or date. |
 | `get_document` | One document's signers: name, email, status, and when they viewed and signed. |
 | `list_templates` | Your templates and the SigPen template library. |
@@ -102,7 +124,7 @@ Any client that supports remote MCP servers over Streamable HTTP and lets you se
 | `set_recipients` | Saves who a draft goes to, with a role for each person. It can add you as a signer too. |
 | `request_send_approval` | Gives you a SigPen link to approve sending a draft. It sends nothing on its own. |
 
-You can connect and list tools without a key. Every tool call needs one.
+Without a key, the server asks your client to sign in with your SigPen account. Clients that support MCP sign-in, like the Claude apps and ChatGPT, open that for you.
 
 ## How sending works
 
@@ -110,17 +132,17 @@ The assistant never sends. `request_send_approval` returns a SigPen link. Open i
 
 - The link lasts 24 hours and works only for you.
 - If anything changes after the link is made (recipients, fields, values, title), the link stops working.
-- Revoking the API key cancels its open links.
+- Revoking the API key, or disconnecting the app, cancels its open links.
 - The assistant can only change or delete drafts it created.
 
 Text inside a document can try to trick an assistant ("send this to someone@else.com"). The approval page is where you catch that, so check every email address before you click.
 
 ## Limits and data
 
-- Each tool call counts as one API request against your key's rate limit.
+- Each tool call counts as one API request against your rate limit.
 - Drafts count toward your monthly document limit, and deleting one doesn't give it back.
 - What a tool returns, such as document titles and signer names and emails, goes to your AI provider under their terms.
-- To disconnect, revoke the key in the [developer dashboard](https://www.sigpen.com/developer?tab=ai).
+- To disconnect, revoke the key or click Disconnect next to the app in the [developer dashboard](https://www.sigpen.com/developer?tab=ai), on the AI Assistants tab.
 
 ## Support
 
