@@ -1,0 +1,20 @@
+{
+  "name": "sigpen",
+  "displayName": "SigPen",
+  "description": "Draft, fill in, and prepare documents for e-signature with SigPen. Nothing is sent until you approve it in SigPen.",
+  "version": "1.1.0",
+  "author": {
+    "name": "SigPen",
+    "email": "support@sigpen.com"
+  },
+  "homepage": "https://www.sigpen.com/ai-assistants",
+  "license": "MIT",
+  "keywords": [
+    "e-signature",
+    "esign",
+    "contracts",
+    "documents",
+    "mcp"
+  ],
+  "logo": "assets/icon.png"
+}

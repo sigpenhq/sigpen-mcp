@@ -1,0 +1,16 @@
+{
+  "name": "sigpen",
+  "description": "SigPen e-signature tools for Claude Code",
+  "owner": {
+    "name": "SigPen",
+    "email": "support@sigpen.com",
+    "url": "https://www.sigpen.com"
+  },
+  "plugins": [
+    {
+      "name": "sigpen",
+      "source": "./plugins/sigpen",
+      "description": "Connect SigPen and send documents for signature from Claude Code. You approve every send."
+    }
+  ]
+}

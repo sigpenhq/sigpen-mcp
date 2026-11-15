@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sigpen": {
+      "url": "https://www.sigpen.com/api/mcp",
+      "headers": { "Authorization": "Bearer ${env:SIGPEN_API_KEY}" }
+    }
+  }
+}
