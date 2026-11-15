@@ -3,7 +3,6 @@
 ## 1.1.0 (2026-11-14)
 
 - Clients can connect and list tools without a key. Tool calls still need one.
-- The server reports its title, icon, and website to clients.
 - Claude Code and Cursor plugins, with a `send-for-signature` skill.
 
 ## 1.0.0 (2026-11-14)

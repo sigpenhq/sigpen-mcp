@@ -6,7 +6,7 @@ Connect your AI assistant to [SigPen](https://www.sigpen.com), the e-signature a
 - **Auth:** `Authorization: Bearer <your SigPen API key>`
 - **Guide:** [sigpen.com/docs/mcp](https://www.sigpen.com/docs/mcp)
 
-This repository holds the setup instructions, the registry listing, and plugins for Claude Code and Cursor. The server itself is hosted by SigPen, so there's nothing to install or run.
+This repository holds the setup instructions and the plugins for Claude Code and Cursor. SigPen hosts the server itself, so there's nothing to install or run.
 
 ## Before you start
 
