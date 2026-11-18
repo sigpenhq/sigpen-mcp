@@ -2,7 +2,7 @@
   "name": "sigpen",
   "displayName": "SigPen",
   "description": "Draft, fill in, and prepare documents for e-signature with SigPen. Nothing is sent until you approve it in SigPen.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": {
     "name": "SigPen",
     "email": "support@sigpen.com"

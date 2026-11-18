@@ -12,10 +12,11 @@ This repository holds the setup instructions and the plugins for Claude Code and
 
 You sign in to SigPen, so there's no key to copy. It works on the free Developer tier and on Professional and up.
 
-1. In Claude, open Settings, then Customize, then Connectors.
-2. Click Add, then Add custom connector. Name it SigPen, use the URL `https://www.sigpen.com/api/mcp`, and click Continue.
-3. Under Authentication, check that **Sign in now** is selected (Claude picks it for SigPen), keep Claude's published identity as the OAuth client, and click Add.
-4. Click Connect, sign in to SigPen, and click Allow.
+SigPen is in [Claude's connector directory](https://claude.ai/directory/sigpen).
+
+1. In Claude, open Customize, then Connectors.
+2. Search for SigPen, open it, and click Connect to Claude.
+3. Sign in to SigPen and click Allow.
 
 Add it once on claude.ai or in Claude Desktop and it works in the mobile apps too. On Team and Enterprise plans, an owner may need to add the connector first.
 
@@ -109,7 +110,7 @@ Any client that supports remote MCP servers over Streamable HTTP works: with MCP
 
 | Tool | What it does |
 | --- | --- |
-| `get_account` | Your plan, how the assistant is connected (a live or test key, or a sign-in), documents sent through the API this month, and rate limits. |
+| `get_account` | Your plan, how the assistant is connected (a live or test key, or a sign-in), documents created through the API or an assistant this month (drafts count), and rate limits. |
 | `list_documents` | Your documents with status and signer counts. Filter by status, title, or date. |
 | `get_document` | One document's signers: name, email, status, and when they viewed and signed. |
 | `list_templates` | Your templates and the SigPen template library. |

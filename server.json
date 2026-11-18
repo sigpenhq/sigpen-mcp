@@ -3,7 +3,7 @@
   "name": "com.sigpen/mcp",
   "title": "SigPen",
   "description": "Draft, fill in, and prepare documents for e-signature. You approve every send in SigPen.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "websiteUrl": "https://www.sigpen.com/ai-assistants",
   "repository": {
     "url": "https://github.com/sigpenhq/sigpen-mcp",
